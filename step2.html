@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
+<style>
+  body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  .cube {
+    width: 50px;
+    height: 50px;
+    background: green;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+</style>
+<script>
+  setTimeout(function(){
+    window.location.href = "https://example.com"; // <-- Final redirect link
+  }, 1000); // 1 second
+</script>
+</head>
+<body>
+  <div class="cube"></div>
+</body>
+</html>
